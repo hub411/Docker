@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xime</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#eef8ff;
+}
+
+.muneca{
+    position:relative;
+    width:180px;
+    cursor:pointer;
+}
+
+.cabeza{
+    width:90px;
+    height:90px;
+    background:#87CEFA;
+    border-radius:50%;
+    margin:auto;
+    position:relative;
+}
+
+.ojo{
+    width:10px;
+    height:10px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:35px;
+}
+
+.ojo.izq{ left:25px; }
+.ojo.der{ right:25px; }
+
+.boca{
+    width:30px;
+    height:15px;
+    border-bottom:4px solid black;
+    border-radius:0 0 20px 20px;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    top:55px;
+}
+
+.cuerpo{
+    width:70px;
+    height:100px;
+    background:#87CEFA;
+    margin:auto;
+    border-radius:20px;
+}
+
+.brazo-izq{
+    position:absolute;
+    width:15px;
+    height:80px;
+    background:#87CEFA;
+    left:35px;
+    top:95px;
+    border-radius:10px;
+    transform:rotate(25deg);
+}
+
+.brazo-der{
+    position:absolute;
+    width:15px;
+    height:80px;
+    background:#87CEFA;
+    right:35px;
+    top:95px;
+    border-radius:10px;
+    transform-origin:top center;
+}
+
+.pierna{
+    width:15px;
+    height:80px;
+    background:#87CEFA;
+    border-radius:10px;
+    position:absolute;
+    bottom:-80px;
+}
+
+.p1{ left:70px; }
+.p2{ right:70px; }
+
+.saludando{
+    animation:saludar 0.4s infinite alternate;
+}
+
+@keyframes saludar{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-70deg);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="muneca" onclick="saludar()">
+
+    <div class="cabeza">
+        <div class="ojo izq"></div>
+        <div class="ojo der"></div>
+        <div class="boca"></div>
+    </div>
+
+    <div class="cuerpo"></div>
+
+    <div class="brazo-izq"></div>
+    <div class="brazo-der" id="brazo"></div>
+
+    <div class="pierna p1"></div>
+    <div class="pierna p2"></div>
+
+</div>
+
+<script>
+function saludar(){
+    document.getElementById("brazo")
+    .classList.toggle("saludando");
+}
+</script>
+
+</body>
+</html>
