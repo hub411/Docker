@@ -110,40 +110,34 @@ body::after{
 .fleco{
     position:absolute;
     width:120px;
-    height:55px;
-    left:50%;
-    top:0;
-    transform:translateX(-50%);
-}
-
-.fleco span{
-    position:absolute;
-    background:#3b2414;
-    border-radius:0 0 30px 30px;
-}
-
-.f1{
-    width:30px;
-    height:45px;
-    left:5px;
-}
-
-.f2{
-    width:35px;
-    height:55px;
-    left:28px;
-}
-
-.f3{
-    width:35px;
-    height:60px;
-    left:55px;
-}
-
-.f4{
-    width:30px;
     height:50px;
-    left:85px;
+    background:#3b2414;
+    left:50%;
+    transform:translateX(-50%);
+    top:8px;
+    border-radius:0 0 40px 40px;
+}
+
+.fleco::before{
+    content:"";
+    position:absolute;
+    width:35px;
+    height:35px;
+    background:#3b2414;
+    left:5px;
+    bottom:-10px;
+    border-radius:50%;
+}
+
+.fleco::after{
+    content:"";
+    position:absolute;
+    width:35px;
+    height:35px;
+    background:#3b2414;
+    right:5px;
+    bottom:-10px;
+    border-radius:50%;
 }
 
 /* Ondas del cabello */
@@ -313,7 +307,7 @@ body::after{
 
 .falda{
     width:110px;
-    height:55px;
+    height:40px;
     background:#6a5acd;
     margin:auto;
     margin-top:-5px;
@@ -324,8 +318,9 @@ body::after{
         0% 100%
     );
     position:relative;
-    z-index:5;
+    z-index:3;
 }
+
 /* Brazos */
 
 .brazo{
@@ -373,19 +368,19 @@ body::after{
 .pierna{
     position:absolute;
     width:18px;
-    height:75px;
+    height:65px;
     background:#ffd7b5;
     border-radius:20px;
-    top:335px;
+    bottom:-70px;
 }
 
 .p1{
-    left:118px;
+    left:108px;
     animation:pierna1 .35s infinite alternate;
 }
 
 .p2{
-    left:145px;
+    right:108px;
     animation:pierna2 .35s infinite alternate;
 }
 
@@ -415,15 +410,15 @@ body::after{
     height:15px;
     background:white;
     border-radius:20px;
-    top:405px;
+    bottom:-80px;
 }
 
 .t1{
-    left:110px;
+    left:100px;
 }
 
 .t2{
-    left:137px;
+    right:100px;
 }
 
 /* Celular */
@@ -528,12 +523,7 @@ body::after{
 
     <div class="cabello">
 
-       <div class="fleco">
-    <span class="f1"></span>
-    <span class="f2"></span>
-    <span class="f3"></span>
-    <span class="f4"></span>
-</div>
+        <div class="fleco"></div>
 
         <div class="onda1"></div>
         <div class="onda2"></div>
@@ -584,6 +574,8 @@ body::after{
     <div class="titulo">
         🎧 Xime Chibi Bailando 🎧
     </div>
+
 </div>
+
 </body>
 </html>
