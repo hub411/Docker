@@ -460,7 +460,34 @@ body::after{
 }
 
 /* Notas musicales */
+/* 🌸 FLORES CAYENDO */
+.flor{
+    position:absolute;
+    top:-50px;
+    font-size:22px;
+    animation:caer linear infinite;
+    opacity:0.9;
+    z-index:0;
+}
 
+@keyframes caer{
+    from{
+        transform:translateY(-10vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+.f1{left:5%; animation-duration:6s;}
+.f2{left:15%; animation-duration:8s;}
+.f3{left:25%; animation-duration:7s;}
+.f4{left:35%; animation-duration:9s;}
+.f5{left:45%; animation-duration:6.5s;}
+.f6{left:55%; animation-duration:8.5s;}
+.f7{left:65%; animation-duration:7.5s;}
+.f8{left:75%; animation-duration:6.8s;}
+.f9{left:85%; animation-duration:9s;}
 .nota{
     position:absolute;
     color:white;
@@ -509,7 +536,15 @@ body::after{
 </style>
 </head>
 <body>
-
+<div class="flor f1">🌸</div>
+<div class="flor f2">🌹</div>
+<div class="flor f3">🌸</div>
+<div class="flor f4">🌹</div>
+<div class="flor f5">🌸</div>
+<div class="flor f6">🌹</div>
+<div class="flor f7">🌸</div>
+<div class="flor f8">🌹</div>
+<div class="flor f9">🌸</div>
 <div class="chibi">
 
     <div class="nota n1">🎵</div>
