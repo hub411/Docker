@@ -1,18 +1,24 @@
-name: Docker Image CI
+name: Build and Save Docker Image
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v4
+
+      - name: Build Image
+        run: docker build -t xime .
+
+      - name: Archive Image
+        run: docker save -o Xime.tar xime
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-tar-image
+          path: Xime.tar
